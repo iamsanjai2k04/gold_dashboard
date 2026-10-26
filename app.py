@@ -93,8 +93,8 @@ try:
     gap = load("gap", dates=("quarter_end",))
     swiss = load("swiss")
 except FileNotFoundError:
-    st.error("No data found. Run `python ingest.py --synthetic` first.")
-    st.stop()
+st.error("No data found. Run `python ingest.py --synthetic` first.")   
+st.stop()
 
 asof = {"price": price.date.max(), "etf": etf.date.max(),
         "declared": declared.date.max(), "gap": gap.quarter_end.max(),
